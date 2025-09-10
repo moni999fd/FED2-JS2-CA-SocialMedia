@@ -23,7 +23,3 @@ The goal is to build the **front-end for a social media application** using HTML
 Clone the repo:
 ```bash
 git clone https://github.com/moni999fd/FED2-JS2-CA-SocialMedia.git
-
-## Deployment
-Live: [https://socialmedia-fed2.netlify.app](https://socialmedia-fed2.netlify.app)
-
