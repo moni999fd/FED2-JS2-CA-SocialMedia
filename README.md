@@ -50,5 +50,9 @@ Open index.html with Live Server (or any local web server).
 You need a valid @stud.noroff.no account to register/login.
 
  Live Demo
-
 https://socialmedia-fed2.netlify.app
+
+Credentials
+Email: moni999@stud.noroff.no
+Password: 123456789
+
