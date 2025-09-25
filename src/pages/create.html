@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Post | Social Media App</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<body>
+  <nav class="navbar" aria-label="Main">
+    <a href="feed.html" class="nav-logo">
+      <img src="../assets/butterfly_logo.png" alt="SocialApp logo" class="logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="feed.html">Feed</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="create.html" aria-current="page">Create</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Create a new post</h1>
+
+    <form id="createForm">
+      <input type="text" id="title" placeholder="Title" required />
+      <textarea id="body" rows="5" placeholder="What’s on your mind?"></textarea>
+
+      <fieldset style="border:none; padding:0; margin: .5rem 0;">
+        <legend style="font-weight:600; margin-bottom:.25rem;">Image (optional)</legend>
+        <input type="url" id="mediaUrl" placeholder="https://example.com/image.jpg" />
+        <input type="text" id="mediaAlt" placeholder="Describe the image (alt text)" />
+      </fieldset>
+
+      <button type="submit">Publish</button>
+
+      <p id="createError" class="error" aria-live="polite"></p>
+      <p id="createSuccess" class="success" aria-live="polite" style="display:none;"></p>
+    </form>
+  </main>
+
+  <script type="module" src="../js/create-post.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile | Social Media App</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<body>
+  <nav class="navbar" aria-label="Main">
+    <a href="feed.html" class="nav-logo">
+      <img src="../assets/butterfly_logo.png" alt="SocialApp logo" class="logo-img" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="feed.html">Feed</a></li>
+      <li><a href="profile.html" aria-current="page">Profile</a></li>
+      <li><a href="create.html">Create</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="profileHeader" class="card" style="margin-bottom:2rem;">
+      <div class="profile-info">
+        <img id="profileAvatar" src="" alt="Your avatar" class="avatar" />
+        <div>
+          <h1 id="profileName">Loading…</h1>
+          <p id="profileBio" class="muted">Bio loading…</p>
+          <p>
+            <strong id="followersCount">0</strong> Followers •
+            <strong id="followingCount">0</strong> Following
+          </p>
+
+          <div style="display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.5rem;">
+            <a href="create.html" class="button-link">+ Create Post</a>
+            <button id="logoutBtn" class="danger">Logout</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-bottom:2rem;">
+      <h2 style="margin-bottom:.5rem;">Edit Profile</h2>
+      <form id="editProfileForm">
+        <label for="bio" style="display:block; font-weight:600; margin:.25rem 0;">Bio (max 160 chars)</label>
+        <textarea id="bio" rows="3" maxlength="160" placeholder="Tell people a bit about you…"></textarea>
+
+        <fieldset style="border:none; padding:0; margin:.75rem 0;">
+          <legend style="font-weight:600; margin-bottom:.25rem;">Avatar (optional)</legend>
+          <input type="url" id="avatarUrl" placeholder="https://example.com/avatar.jpg" />
+          <input type="text" id="avatarAlt" placeholder="Describe the avatar (alt text, &lt;120 chars)" maxlength="120" />
+        </fieldset>
+
+        <div style="display:flex; gap:.5rem; align-items:center; margin-top:.5rem;">
+          <button type="submit">Save profile</button>
+          <span id="profileSaveStatus" class="muted" aria-live="polite"></span>
+        </div>
+
+        <p id="profileSaveError" class="error" aria-live="polite" style="margin-top:.5rem;"></p>
+        <p id="profileSaveSuccess" class="success" aria-live="polite" style="display:none; margin-top:.5rem;"></p>
+      </form>
+    </section>
+
+    <section>
+      <h2>My Posts</h2>
+      <div id="myPosts" style="margin-top:1rem;">
+        <p>Loading your posts…</p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="../js/profile.js"></script>
+</body>
+</html>

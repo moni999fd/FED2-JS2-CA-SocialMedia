@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Post | Social Media App</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<body>
+  <nav class="navbar" aria-label="Main">
+    <a href="feed.html" class="nav-logo">
+      <img src="../assets/butterfly_logo.png" alt="SocialApp logo" class="logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="feed.html">Feed</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="create.html">Create</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <a href="feed.html" class="button-link" style="margin-bottom:1rem;display:inline-block;">← Back to feed</a>
+
+    <section id="singlePost" aria-live="polite">
+    </section>
+
+    <section id="reactBar" style="display:none;margin-top:1rem;">
+      <h3 style="margin-bottom:.5rem;">React</h3>
+      <div class="reaction-bar" role="group" aria-label="React to post">
+        <button class="react-btn" data-emoji="👍" title="Like">👍</button>
+        <button class="react-btn" data-emoji="😍" title="Love">😍</button>
+        <button class="react-btn" data-emoji="🎉" title="Celebrate">🎉</button>
+        <button class="react-btn" data-emoji="👏" title="Applause">👏</button>
+      </div>
+      <p id="reactStatus" class="muted" style="margin-top:.5rem;"></p>
+    </section>
+
+    <section id="addCommentSection" style="display:none;margin-top:1rem;">
+      <h3 style="margin-bottom:.5rem;">Add a comment</h3>
+      <form id="commentForm">
+        <textarea id="commentBody" rows="3" placeholder="Write your comment…" required></textarea>
+        <div style="display:flex; gap:.5rem; align-items:center; margin-top:.5rem;">
+          <button type="submit">Post comment</button>
+          <span id="commentStatus" class="muted"></span>
+        </div>
+      </form>
+    </section>
+
+    <section id="manageSection" style="display:none;margin-top:1.25rem;">
+      <h3 style="margin-bottom:.5rem;">Manage</h3>
+      <div style="display:flex; gap:.5rem; flex-wrap:wrap;">
+        <button id="editBtn" type="button">Edit post</button>
+        <button id="deleteBtn" type="button" class="danger">Delete post</button>
+        <span id="manageStatus" class="muted"></span>
+      </div>
+
+      <form id="editForm" style="display:none; margin-top:.75rem;">
+        <input type="text" id="editTitle" placeholder="Title" required />
+        <textarea id="editBody" rows="5" placeholder="Post body"></textarea>
+        <fieldset style="border:none; padding:0; margin:.5rem 0;">
+          <legend style="font-weight:600; margin-bottom:.25rem;">Image (optional)</legend>
+          <input type="url" id="editMediaUrl" placeholder="https://example.com/image.jpg" />
+          <input type="text" id="editMediaAlt" placeholder="Describe the image (alt text)" />
+        </fieldset>
+        <div style="display:flex; gap:.5rem;">
+          <button type="submit">Save changes</button>
+          <button type="button" id="cancelEdit">Cancel</button>
+        </div>
+        <p id="editError" class="error" aria-live="polite"></p>
+        <p id="editSuccess" class="success" aria-live="polite" style="display:none;"></p>
+      </form>
+    </section>
+  </main>
+
+  <script type="module" src="../js/single-post.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile | Social Media App</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<body>
+  <nav class="navbar" aria-label="Main">
+    <a href="feed.html" class="nav-logo">
+      <img src="../assets/butterfly_logo.png" alt="SocialApp logo" class="logo-img" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="feed.html">Feed</a></li>
+      <li><a href="profile.html">My Profile</a></li>
+      <li><a href="create.html">Create</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <a href="feed.html" class="button-link" style="margin-bottom:1rem;display:inline-block;">← Back to feed</a>
+
+    <section id="userHeader" class="card" style="margin-bottom:2rem;">
+      <div class="profile-info">
+        <img id="userAvatar" src="" alt="User avatar" class="avatar" />
+        <div>
+          <h1 id="userName">Loading…</h1>
+          <p id="userBio" class="muted">Fetching profile…</p>
+          <p>
+            <strong id="userFollowers">0</strong> Followers •
+            <strong id="userFollowing">0</strong> Following
+          </p>
+          <div style="display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.5rem;">
+            <button id="followBtn" type="button">Follow</button>
+            <button id="unfollowBtn" type="button" class="danger">Unfollow</button>
+            <span id="followStatus" class="muted"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 id="postsHeading">Posts</h2>
+      <div id="userPosts" style="margin-top:1rem;">
+        <p>Loading posts…</p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="../js/user-profile.js"></script>
+</body>
+</html>

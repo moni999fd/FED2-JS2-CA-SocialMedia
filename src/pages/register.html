@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | Social Media App</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<body>
+  <nav class="navbar" aria-label="Main">
+    <a href="feed.html" class="nav-logo">
+      <img src="../assets/butterfly_logo.png" alt="SocialApp logo" class="logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="feed.html">Feed</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html" aria-current="page">Register</a></li>
+    </ul>
+  </nav>
+
+  <main>
+  <h1>Create an Account</h1>
+
+  <p id="registerSuccess" class="success" aria-live="polite" style="display:none;"></p>
+
+  <form id="registerForm">
+    <input type="text" id="name" placeholder="Name" required />
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <button type="submit">Create Account</button>
+
+    <p id="registerError" class="error" aria-live="polite"></p>
+
+    <p style="margin-top:.5rem;">
+      Already have an account? <a href="login.html">Login</a>
+    </p>
+  </form>
+</main>
+
+  <script type="module" src="../js/register.js"></script>
+</body>
+</html>
