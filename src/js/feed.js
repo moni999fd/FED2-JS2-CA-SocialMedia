@@ -79,8 +79,6 @@ async function ensureApiKey() {
   return key;
 }
 
-/**
- * Fetches posts from the Noroff API.
  * @async
  * @param {string} [q] - Optional search query to filter posts.
  * @returns {Promise<Object[]>} A list of post objects.

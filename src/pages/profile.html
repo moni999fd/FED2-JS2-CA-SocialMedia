@@ -4,12 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Profile | Social Media App</title>
+  
+  <link rel="stylesheet" href="../styles/tailwind.css" />
+  <!-- Your custom styles from JS2 CA -->
   <link rel="stylesheet" href="../styles/style.css" />
 </head>
 <body>
-  <nav class="navbar" aria-label="Main">
-    <a href="feed.html" class="nav-logo">
-      <img src="../assets/butterfly_logo.png" alt="SocialApp logo" class="logo-img" />
+  
+  <nav class="navbar mb-8" aria-label="Main">
+    <a href="feed.html" class="nav-logo flex items-center gap-2">
+      <img
+        src="../assets/butterfly_logo.png"
+        alt="SocialApp logo"
+        class="logo-img"
+      />
     </a>
     <ul class="nav-links">
       <li><a href="feed.html">Feed</a></li>
@@ -20,52 +28,105 @@
     </ul>
   </nav>
 
-  <main>
-    <section id="profileHeader" class="card" style="margin-bottom:2rem;">
-      <div class="profile-info">
-        <img id="profileAvatar" src="" alt="Your avatar" class="avatar" />
-        <div>
-          <h1 id="profileName">Loading…</h1>
-          <p id="profileBio" class="muted">Bio loading…</p>
-          <p>
-            <strong id="followersCount">0</strong> Followers •
-            <strong id="followingCount">0</strong> Following
+  <main class="max-w-5xl mx-auto space-y-6">
+    
+    <section id="profileHeader" class="card">
+      <div class="profile-info gap-6">
+        <img
+          id="profileAvatar"
+          src=""
+          alt="Your avatar"
+          class="avatar shadow-sm"
+        />
+        <div class="space-y-2">
+          <h1 id="profileName" class="text-2xl font-bold">Loading…</h1>
+          <p id="profileBio" class="muted text-sm">
+            Bio loading…
+          </p>
+          <p class="text-sm">
+            <strong id="followersCount" class="font-semibold">0</strong> Followers •
+            <strong id="followingCount" class="font-semibold">0</strong> Following
           </p>
 
-          <div style="display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.5rem;">
-            <a href="create.html" class="button-link">+ Create Post</a>
-            <button id="logoutBtn" class="danger">Logout</button>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <a href="create.html" class="button-link inline-flex items-center justify-center">
+              + Create Post
+            </a>
+            <button id="logoutBtn" class="danger px-3 py-2 rounded">
+              Logout
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="card" style="margin-bottom:2rem;">
-      <h2 style="margin-bottom:.5rem;">Edit Profile</h2>
-      <form id="editProfileForm">
-        <label for="bio" style="display:block; font-weight:600; margin:.25rem 0;">Bio (max 160 chars)</label>
-        <textarea id="bio" rows="3" maxlength="160" placeholder="Tell people a bit about you…"></textarea>
-
-        <fieldset style="border:none; padding:0; margin:.75rem 0;">
-          <legend style="font-weight:600; margin-bottom:.25rem;">Avatar (optional)</legend>
-          <input type="url" id="avatarUrl" placeholder="https://example.com/avatar.jpg" />
-          <input type="text" id="avatarAlt" placeholder="Describe the avatar (alt text, &lt;120 chars)" maxlength="120" />
-        </fieldset>
-
-        <div style="display:flex; gap:.5rem; align-items:center; margin-top:.5rem;">
-          <button type="submit">Save profile</button>
-          <span id="profileSaveStatus" class="muted" aria-live="polite"></span>
+    
+    <section class="card">
+      <h2 class="text-xl font-semibold mb-3">Edit Profile</h2>
+      <form id="editProfileForm" class="space-y-4">
+        <div>
+          <label
+            for="bio"
+            class="block font-medium mb-1"
+          >
+            Bio (max 160 chars)
+          </label>
+          <textarea
+            id="bio"
+            rows="3"
+            maxlength="160"
+            placeholder="Tell people a bit about you…"
+            class="w-full"
+          ></textarea>
         </div>
 
-        <p id="profileSaveError" class="error" aria-live="polite" style="margin-top:.5rem;"></p>
-        <p id="profileSaveSuccess" class="success" aria-live="polite" style="display:none; margin-top:.5rem;"></p>
+        <fieldset class="border-0 p-0 space-y-2">
+          <legend class="font-medium mb-1">Avatar (optional)</legend>
+          <input
+            type="url"
+            id="avatarUrl"
+            placeholder="https://example.com/avatar.jpg"
+            class="w-full"
+          />
+          <input
+            type="text"
+            id="avatarAlt"
+            placeholder="Describe the avatar (alt text, <120 chars)"
+            maxlength="120"
+            class="w-full"
+          />
+        </fieldset>
+
+        <div class="flex items-center gap-2 pt-1">
+          <button type="submit">
+            Save profile
+          </button>
+          <span
+            id="profileSaveStatus"
+            class="muted text-sm"
+            aria-live="polite"
+          ></span>
+        </div>
+
+        <p
+          id="profileSaveError"
+          class="error mt-2"
+          aria-live="polite"
+        ></p>
+        <p
+          id="profileSaveSuccess"
+          class="success mt-2"
+          aria-live="polite"
+          style="display:none;"
+        ></p>
       </form>
     </section>
 
-    <section>
-      <h2>My Posts</h2>
-      <div id="myPosts" style="margin-top:1rem;">
-        <p>Loading your posts…</p>
+    
+    <section class="space-y-3">
+      <h2 class="text-xl font-semibold">My Posts</h2>
+      <div id="myPosts" class="mt-2">
+        <p class="muted">Loading your posts…</p>
       </div>
     </section>
   </main>

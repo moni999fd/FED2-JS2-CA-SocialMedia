@@ -1,41 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login | Social Media App</title>
-  <link rel="stylesheet" href="../styles/style.css" />
-</head>
-<body>
-  <nav class="navbar" aria-label="Main">
-    <a href="feed.html" class="nav-logo">
-      <img src="../assets/butterfly_logo.png" alt="SocialApp logo" class="logo-img">
-    </a>
-    <ul class="nav-links">
-      <li><a href="feed.html">Feed</a></li>
-      <li><a href="profile.html">Profile</a></li>
-      <li><a href="login.html" aria-current="page">Login</a></li>
-      <li><a href="register.html">Register</a></li>
-    </ul>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login | Social Media App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <main>
-    <h1>Login</h1>
+    
+    <link rel="stylesheet" href="../styles/tailwind.css" />
+    <!-- Your existing custom styles (optional but safe to keep) -->
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body class="min-h-screen bg-slate-100 flex items-center justify-center px-4 py-8">
+    <main class="w-full max-w-md">
+      <!-- Logo + title -->
+      <div class="flex flex-col items-center mb-8">
+        <a href="../index.html" class="inline-flex items-center gap-2 mb-3">
+          <img
+            src="../assets/butterfly_logo.png"
+            alt="SocialApp logo"
+            class="h-10 w-10 object-contain"
+          />
+          <span class="text-lg font-semibold text-slate-800">Social Media App</span>
+        </a>
+        <h1 class="text-2xl font-bold text-slate-900 mb-1">Welcome back</h1>
+        <p class="text-sm text-slate-600 text-center">
+          Log in with your <span class="font-medium">@stud.noroff.no</span> email to continue.
+        </p>
+      </div>
 
-    <form id="loginForm">
-      <input type="email" id="email" placeholder="Email" required />
-      <input type="password" id="password" placeholder="Password" required />
-      <button type="submit">Login</button>
+      
+      <section
+        class="bg-white/90 backdrop-blur rounded-xl shadow-lg shadow-slate-200 border border-slate-100 p-6 sm:p-8"
+        aria-labelledby="loginHeading"
+      >
+        <h2
+          id="loginHeading"
+          class="text-xl font-semibold text-slate-900 mb-4 text-center sm:text-left"
+        >
+          Login
+        </h2>
 
-      <p id="loginError" class="error" aria-live="polite"></p>
-      <p id="loginSuccess" class="success" aria-live="polite" style="display:none;"></p>
+        
+        <form id="loginForm" novalidate class="space-y-4">
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-sm font-medium text-slate-700">
+              Email
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              autocomplete="email"
+              placeholder="you@stud.noroff.no"
+              class="mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-500"
+            />
+            <p class="mt-1 text-xs text-slate-500">
+              Must be a valid <span class="font-medium">@stud.noroff.no</span> email.
+            </p>
+          </div>
 
-      <p style="margin-top:.5rem;">
-        New here? <a href="register.html">Create an account</a>
-      </p>
-    </form>
+          
+          <div>
+            <label for="password" class="block text-sm font-medium text-slate-700">
+              Password
+            </label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              required
+              minlength="8"
+              autocomplete="current-password"
+              placeholder="Min. 8 characters"
+              class="mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-500"
+            />
+            <p class="mt-1 text-xs text-slate-500">
+              At least 8 characters.
+            </p>
+          </div>
 
-  </main>
-  <script type="module" src="../js/login.js"></script>
-</body>
+          
+          <p
+            id="loginError"
+            class="min-h-[1.25rem] text-sm text-red-600"
+            aria-live="polite"
+          ></p>
+          <p
+            id="loginSuccess"
+            class="min-h-[1.25rem] text-sm text-emerald-600"
+            aria-live="polite"
+          ></p>
+
+          
+          <button
+            type="submit"
+            class="mt-2 inline-flex w-full items-center justify-center rounded-md bg-purple-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-purple-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-100 disabled:opacity-70 disabled:cursor-not-allowed"
+          >
+            Log in
+          </button>
+        </form>
+
+    
+        <p class="mt-6 text-center text-sm text-slate-600">
+          Don’t have an account?
+          <a
+            href="register.html"
+            class="font-medium text-purple-700 hover:text-purple-800 hover:underline"
+          >
+            Register here
+          </a>
+        </p>
+      </section>
+    </main>
+
+    <script type="module" src="../js/login.js"></script>
+  </body>
 </html>

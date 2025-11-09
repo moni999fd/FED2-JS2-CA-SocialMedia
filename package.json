@@ -1,0 +1,22 @@
+{
+  "name": "fed2-js2-ca-socialmedia",
+  "version": "1.0.0",
+  "description": "FED2 JS2 Course Assignment – Social Media App",
+  "main": "index.js",
+  "scripts": {
+    "dev:css": "npx tailwindcss -i ./src/styles/tailwind-input.css -o ./src/styles/tailwind.css --watch",
+    "build:css": "npx tailwindcss -i ./src/styles/tailwind-input.css -o ./src/styles/tailwind.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moni999fd/FED2-JS2-CA-SocialMedia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moni999fd/FED2-JS2-CA-SocialMedia/issues"
+  },
+  "homepage": "https://github.com/moni999fd/FED2-JS2-CA-SocialMedia#readme"
+}

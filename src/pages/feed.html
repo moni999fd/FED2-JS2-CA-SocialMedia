@@ -4,38 +4,53 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Feed | Social Media App</title>
+
+
+  <link rel="stylesheet" href="../styles/tailwind.css" />
+
+
   <link rel="stylesheet" href="../styles/style.css" />
+
   <style>
-    #searchForm {
-      display: flex;
-      align-items: center;
-      gap: .5rem;
-      flex-wrap: nowrap;
-      margin-top: .5rem;
-    }
-    #searchForm input[type="search"] {
-      flex: 1 1 320px;
-      min-width: 12rem;
-      max-width: 36rem;
-    }
-    #searchForm button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      height: 2.4rem;
-      padding: 0 .8rem;
-      line-height: 1;
-      white-space: nowrap;
-    }
-    #clearSearch {
-      border: 1px solid rgba(0,0,0,.12);
-      background: #fff;
-      border-radius: var(--border-radius, .3rem);
-      cursor: pointer;
-    }
-    #clearSearch:hover { filter: brightness(0.95); }
-    #searchStatusLine { margin-top: .5rem; opacity: .8; }
-  </style>
+  #searchForm {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    flex-wrap: nowrap;
+    margin-top: .5rem;
+  }
+  #searchForm input[type="search"] {
+    flex: 1 1 320px;
+    min-width: 12rem;
+    max-width: 36rem;
+  }
+  #searchForm button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.4rem;
+    padding: 0 .8rem;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  #clearSearch {
+    border: 1px solid rgba(0,0,0,.12);
+    background: #fff;
+    border-radius: var(--border-radius, .3rem);
+    cursor: pointer;
+  }
+  #clearSearch:hover { filter: brightness(0.95); }
+  #searchStatusLine { margin-top: .5rem; opacity: .8; }
+
+  #postList h3 {
+    font-weight: 700;
+  }
+
+
+  #postList strong {
+    font-weight: 600;
+  }
+</style>
 </head>
 <body>
   <nav class="navbar" aria-label="Main">
@@ -55,13 +70,35 @@
     <h1>Feed</h1>
 
     <form id="searchForm" aria-label="Search posts">
-      <input type="search" name="q" id="q" placeholder="Type here…" aria-label="Search" />
+      <input
+        type="search"
+        name="q"
+        id="q"
+        placeholder="Type here…"
+        aria-label="Search"
+      />
       <button type="submit">Search</button>
-      <button type="button" id="clearSearch" aria-label="Clear search" title="Clear">×</button>
+      <button
+        type="button"
+        id="clearSearch"
+        aria-label="Clear search"
+        title="Clear"
+      >
+        ×
+      </button>
     </form>
-    <p id="searchStatusLine" class="muted" aria-live="polite"></p>
 
-    <section id="postList" aria-live="polite" style="margin-top:1rem;">
+    <p
+      id="searchStatusLine"
+      class="muted"
+      aria-live="polite"
+    ></p>
+
+    <section
+      id="postList"
+      aria-live="polite"
+      style="margin-top:1rem;"
+    >
     </section>
   </main>
 

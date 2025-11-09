@@ -7,8 +7,6 @@ const submitBtn = form?.querySelector('button[type="submit"]');
 
 const BASE = "https://v2.api.noroff.dev";
 
-/**
- * Log a user in via Noroff Auth API.
  * @param {{email:string, password:string}} payload
  * @returns {Promise<{accessToken:string,name:string,email:string}>}
  */
