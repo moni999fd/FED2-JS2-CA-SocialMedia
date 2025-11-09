@@ -1,3 +1,5 @@
+console.log("login.js loaded ✅");
+
 const form = document.getElementById("loginForm");
 const emailEl = document.getElementById("email");
 const passwordEl = document.getElementById("password");
@@ -7,6 +9,8 @@ const submitBtn = form?.querySelector('button[type="submit"]');
 
 const BASE = "https://v2.api.noroff.dev";
 
+/**
+ * Log in via Noroff API
  * @param {{email:string, password:string}} payload
  * @returns {Promise<{accessToken:string,name:string,email:string}>}
  */
@@ -35,11 +39,15 @@ async function login(payload) {
 
 function onLoginSuccess(auth) {
   localStorage.setItem("accessToken", auth.accessToken);
-  localStorage.setItem("user", JSON.stringify({ name: auth.name, email: auth.email }));
-
+  localStorage.setItem(
+    "user",
+    JSON.stringify({ name: auth.name, email: auth.email }),
+  );
 
   if (successEl) {
-    successEl.textContent = `🎉 Welcome back, ${auth.name || "friend"}! Redirecting to your feed…`;
+    successEl.textContent = `🎉 Welcome back, ${
+      auth.name || "friend"
+    }! Redirecting to your feed…`;
     successEl.style.display = "block";
   }
 
@@ -72,7 +80,8 @@ form?.addEventListener("submit", async (e) => {
     const auth = await login({ email, password });
     onLoginSuccess(auth);
   } catch (err) {
-    errorEl.textContent = err.message || "Something went wrong. Please try again.";
+    errorEl.textContent =
+      err.message || "Something went wrong. Please try again.";
   } finally {
     setLoading(false);
   }
