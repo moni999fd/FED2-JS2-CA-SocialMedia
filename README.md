@@ -1,57 +1,144 @@
-FED2 JS2 Course Assignment – Social Media App
+# EliteAuctions – Noroff SP2 Auction Website
 
-This project is my Course Assignment for FED2 JavaScript 2.
-The goal was to build the front-end for a social media application using HTML, CSS, and Vanilla JavaScript, connected to the Noroff Social API v2.
+Semester Project 2 – Front-end Development
 
-Features
-User Authentication
+A simple, responsive auction platform built with **HTML**, **CSS/Tailwind**, and **vanilla JavaScript**, using the **Noroff API v2 (Auction endpoints)**.  
+Registered users can create listings, upload images, place bids, edit profiles, and view their activity.  
+Unregistered users can browse and search listings.
 
-Register with a Noroff student email (@stud.noroff.no)
+---
 
-Login & logout
+## Live Demo
 
-Posts
+https://sp2-auction-site.netlify.app/
 
-View global feed (all posts)
+## GitHub Repository
 
-Create, edit, and delete own posts
+https://github.com/moni999fd/sp2-auction-site
 
-View single posts with comments and reactions
+---
 
-Search posts by title, body, or author
+## Features
 
-Profiles
+### Authentication
 
-View own profile (bio, avatar, my posts, followers/following)
+- Register using `@stud.noroff.no` email
+- Login + logout
+- LocalStorage-based session handling
+- Dynamic navbar (username + credits visible when logged in)
 
-Edit profile (update bio & avatar)
+### Profile Page
 
-View other user profiles with their posts
+- View user details (bio, avatar, banner, credits)
+- Edit bio, avatar, and banner
+- View **My Listings** (listings created by user)
+- View **Listings I’ve Bid On** (dynamic filter of listings containing user’s bids)
 
-Follow/unfollow other users with live count updates
+### Listings
 
-Tech Stack
+- Browse all active listings
+- Search by title
+- View single listing with:
+  - Media gallery
+  - Bid history
+  - Highest bid
+  - Closing date/time
+- Logged-in users can place bids
+- Creators can **edit** and **delete** their own listings
 
-HTML5
+### Create Listing
 
-CSS3 (custom, responsive)
+- Add title, description, image URL, and auction end date/time
+- Form validation
+- Redirect to newly created listing
 
-JavaScript (ES6 modules)
+---
 
-Noroff Social API v2
+## Technology Stack
 
-Setup & Run
+**Frontend:**
 
-Clone the repository:
-git clone https://github.com/moni999fd/FED2-JS2-CA-SocialMedia.git
-cd FED2-JS2-CA-SocialMedia
+- HTML5
+- Tailwind CSS (via CDN)
+- Vanilla JavaScript (ES Modules)
 
-Open index.html with Live Server (or any local web server).
-You need a valid @stud.noroff.no account to register/login.
+**API:**
 
-Live Demo
-https://socialmedia-fed2.netlify.app
+- Noroff Auction API v2
+- Endpoints used: `/auth`, `/profiles`, `/listings`, `/listings/:id/bids`
 
-Credentials
-Email: moni999@stud.noroff.no
-Password: 123456789
+**Hosting:**
+
+- Netlify
+
+---
+
+## Project Structure
+
+sp2-auction-site/
+│ index.html
+│ listing.html
+│ create-listing.html
+│ profile.html
+│ login.html
+│ register.html
+│ styles/
+│ └── base.css
+│ js/
+│ ├── api.js
+│ ├── auth.js
+│ ├── config.js
+│ ├── feed.js
+│ ├── listing.js
+│ ├── profile.js
+│ ├── create-listing.js
+│ ├── login.js
+│ ├── register.js
+│ └── ui.js
+└ assets/
+
+---
+
+## Testing
+
+The following were tested manually and through browser DevTools:
+
+- Form validation on all major forms
+- Navigation flow
+- Bid placement
+- Profile updates
+- API error handling
+- Mobile responsiveness
+- Deployment test on Netlify (private window + incognito)
+
+---
+
+## Requirements Coverage
+
+✔ Register / Login  
+✔ Create Listing  
+✔ Edit Profile  
+✔ Browse & Search Listings  
+✔ View Single Listing  
+✔ Place Bid  
+✔ View My Listings  
+✔ View Listings Bid On  
+✔ Delete Listing  
+✔ Responsive Design  
+✔ Deployed Frontend  
+✔ API v2 Integration
+
+---
+
+## Reflection
+
+This project strengthened my skills in API integration, asynchronous JavaScript, modular structuring, and UI consistency.
+One of the main challenges was managing state across pages and ensuring profile and listing data always stayed in sync with the API.
+I also focused on creating a premium user interface that reflects a luxury auction platform while ensuring full responsiveness and accessibility.
+
+---
+
+## Author
+
+**Monica Marulanda**  
+Front-end Developer Student @ Noroff
